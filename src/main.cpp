@@ -13,7 +13,7 @@ void Error_Handler(void);
 
 int main(void) {
 
-  uint8_t buf[12];
+  uint8_t buf[19];
   HAL_Init();
   SystemClock_Config();
   SystemCoreClockUpdate();
@@ -23,7 +23,7 @@ int main(void) {
 
   while (1)
   {
-	  strcpy((char*)buf, "Hello from STM32Cube Framwork PlatformIO\r\n");
+	  strcpy((char*)buf, "Hello PlatformIO\r\n");
 	  HAL_UART_Transmit(&huart2, buf, strlen((char*)buf), HAL_MAX_DELAY);
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);
 	  HAL_Delay(100);
